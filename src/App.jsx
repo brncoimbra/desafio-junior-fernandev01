@@ -5,11 +5,20 @@ function App() {
   const [list, setList] = useState([]);
 
   const handleClick = (event) => {
-    const { clientX, clientY } = event;
+    const newDot = {
+      clientX: event.clientX,
+      clientY: event.clientY,
+    };
+
+    setList((prev) => [...prev, newDot]);
   };
+
   return (
     <>
-      <div className='box' onClick={handleClick}></div>
+      <div className='box' onClick={handleClick}>
+        {JSON.stringify(list)}
+        <span className='dot' />
+      </div>
     </>
   );
 }
