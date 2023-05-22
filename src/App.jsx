@@ -12,6 +12,7 @@ function App() {
     };
     console.log(list);
     setList((prev) => [...prev, newDot]);
+    setRedo([]);
   };
 
   const handleUndo = (event) => {
